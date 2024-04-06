@@ -48,13 +48,13 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 # html_theme = 'alabaster'
-html_theme = "sphinx_book_theme"
+html_theme = 'sphinx_book_theme'
 # html_logo = "path/to/myimage.png" # (create folder, e.g.theme_custom)                 # TODO
-html_title = "mydocs"
+html_title = 'mydocs'
 
 html_theme_options = {
-"repository_provider": "github",
-    "repository_url": "https://github.com/tabularo/",
+"repository_provider": 'github',
+    "repository_url": 'https://github.com/tabularo/',
     "use_repository_button": True,
     "use_sidenotes": True
 }
