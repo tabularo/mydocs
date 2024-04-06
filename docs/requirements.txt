@@ -1,2 +1,2 @@
-# required
+# Theme needed otherwise layout will break
 sphinx_book_theme
