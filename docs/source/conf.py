@@ -47,7 +47,17 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
+html_theme = "sphinx_book_theme"
+# html_logo = "path/to/myimage.png" # (create folder, e.g.theme_custom)                 # TODO
+html_title = "mydocs"
+
+html_theme_options = {
+"repository_provider": "github",
+    "repository_url": "https://github.com/tabularo/",
+    "use_repository_button": True,
+    "use_sidenotes": True
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
