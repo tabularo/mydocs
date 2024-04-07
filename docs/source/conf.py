@@ -31,6 +31,15 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'myst_parser',                      # TODO Check with DevTeam if deprecated, replaced
+    'sphinx_design',
+    'sphinxcontrib.mermaid',
+    'sphinx_copybutton'
+]
+
+myst_enable_extensions = [
+    'colon_fence',
+    # 'attrs_block'                     # TODO Check with DevTeam if deprecated
 ]
 
 # Add any paths that contain templates here, relative to this directory.

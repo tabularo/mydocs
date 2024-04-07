@@ -8,9 +8,9 @@ Welcome to mydocs's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Topic Areas:
 
-
+   sphinx/index
 
 Indices and tables
 ==================
