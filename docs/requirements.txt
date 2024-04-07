@@ -1,3 +1,6 @@
 # Theme needed otherwise layout will break
 sphinx_book_theme
 myst-parser
+sphinx_design
+sphinxcontrib.mermaid
+sphinx_copybutton
