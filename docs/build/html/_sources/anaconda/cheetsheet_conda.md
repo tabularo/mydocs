@@ -12,3 +12,7 @@
 | clone base environment                 | `conda create --name <myenv> --clone base`                    |
 | delete environment                     | `conda env remove --name <myenv>`                              |
 
+Maintenance
+
+conda update conda
+pip install --upgrade pip
