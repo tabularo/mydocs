@@ -1,6 +1,8 @@
-# Theme needed otherwise layout will break
+# For readthedocs needed, otherwise import to readthedocs will fail
 sphinx_book_theme
 myst-parser
 sphinx_design
 sphinxcontrib.mermaid
 sphinx_copybutton
+
+# TODO Check with DevTeam if 'requirements.txt' is necessary, reommended or just for readthedocs setup

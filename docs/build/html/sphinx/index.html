@@ -51,7 +51,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'sphinx/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sphinx Installation" href="sphinx_installation.html" />
+    <link rel="next" title="Installation" href="installation/index.html" />
     <link rel="prev" title="Welcome to mydocs’s documentation!" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -153,11 +153,26 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Topic Areas:</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software &amp; Frameworks:</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Sphinx</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_installation.html">Sphinx Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_theme_installation.html">Sphinx Thema Installation</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="installation/index.html">Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_installation.html">Basic Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_theme_installation.html">Theme Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="content_layout/index.html">Content and formatting</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/Admonitions.html">Admonitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/special_content_blocks.html">Special Content blocks</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="content_layout/list_table.html">Lists and Tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
 </ul>
 </li>
 </ul>
@@ -327,19 +342,83 @@ document.write(`
                   
   <section id="sphinx">
 <h1>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this heading">#</a></h1>
-<p>These sections describe installation and packages to run Sphinx wit the ‘sphinx-book-theme’.</p>
+<p>This chapter is about installing <strong>sphinx</strong>, my preferred theme <strong>sphinx-book-theme</strong> and code snippets for daily use to create and style content.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sections</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Install</p></td>
+<td><p>Step-by-step instructions for installing Sphinx and the preferred theme, Sphinx Book Theme.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Content and Formatting</p></td>
+<td><p>Contains excerpts from frequently used syntax for styling documentation.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="sphinx_installation.html">Sphinx Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/sphinx_installation.html">Basic Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_installation.html#prerequisites">Prerequisites</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx_theme_installation.html">Sphinx Thema Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_theme_installation.html#myst">MyST</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_theme_installation.html#sphinx-design">Sphinx-Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_theme_installation.html#mermaid-diagramming">Mermaid Diagramming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_theme_installation.html#sphinx-copybutton">Sphinx Copybutton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx_theme_installation.html#warnings">Warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/sphinx_theme_installation.html">Theme Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_theme_installation.html#install-packages">install packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_theme_installation.html#myst">MyST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_theme_installation.html#sphinx-design">Sphinx-Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_theme_installation.html#mermaid-diagramming">Mermaid Diagramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_theme_installation.html#sphinx-copybutton">Sphinx Copybutton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation/sphinx_theme_installation.html#config-files">config files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation/sphinx_theme_installation.html#conf-py">conf.py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation/sphinx_theme_installation.html#requirements-txt">‘requirements.txt’</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="content_layout/index.html">Content and formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="content_layout/Admonitions.html">Admonitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/Admonitions.html#admonition-types">Admonition types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="content_layout/Admonitions.html#topics">Topics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="content_layout/Admonitions.html#container">Container</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/Admonitions.html#other-containers">Other Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="content_layout/Admonitions.html#card">Card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="content_layout/Admonitions.html#tab-set">Tab-Set</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="content_layout/special_content_blocks.html">Special Content blocks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/special_content_blocks.html#quotations-and-epigraphs">Quotations and epigraphs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="content_layout/special_content_blocks.html#default-markdown-quotes">Default markdown quotes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="content_layout/special_content_blocks.html#epigraph-with-attribution">Epigraph with attribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="content_layout/special_content_blocks.html#text-with-footnote-on-side">Text with footnote on side</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="content_layout/special_content_blocks.html#css-classes-for-custom-margin-content">CSS classes for custom margin content</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/special_content_blocks.html#margin-note">Margin Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/special_content_blocks.html#content-examples-in-the-margin">Content examples in the margin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/special_content_blocks.html#full-width-content">Full-width content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/special_content_blocks.html#sidebars">Sidebars</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="content_layout/special_content_blocks.html#data-elements">Data Elements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/special_content_blocks.html#code-blocks">Code blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="content_layout/list_table.html">Lists and Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/list_table.html#table">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="content_layout/list_table.html#enumerated-lists">Enumerated Lists</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -367,11 +446,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="sphinx_installation.html"
+       href="installation/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sphinx Installation</p>
+        <p class="prev-next-title">Installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

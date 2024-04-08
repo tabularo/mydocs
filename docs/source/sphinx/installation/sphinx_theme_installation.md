@@ -1,4 +1,6 @@
-# Sphinx Thema Installation
+# Theme Installation
+
+## install packages
 
 :::{important} 
 
@@ -69,9 +71,9 @@ Package configuration details, see [{book}theme](https://sphinx-book-theme.readt
 
 Install ``myst-parser`` with ``conda``:
 
-:::{tip}
+:::{note}
 :class: margin
-Add margin content
+to use markdown (files) for within this documenation
 :::
 
 ```{code-block}
@@ -104,7 +106,7 @@ Theme configuration at ``conf.py``:
 
 'attrs_block' enable parsing of block attributes before certain block syntaxes
 
-:::{note}
+:::{seealso}
 Package configuration details, see [{MyST}theme](https://myst-parser.readthedocs.io/en/latest/intro.html).
 :::
 
@@ -120,9 +122,9 @@ Package configuration details, see [{MyST}theme](https://myst-parser.readthedocs
 
 Install ``sphinx-design`` with ``conda``:
 
-:::{tip}
+:::{note}
 :class: margin
-Add margin content
+A sphinx extension for designing beautiful, view size responsive web components.
 :::
 
 ```{code-block}
@@ -151,6 +153,7 @@ Theme configuration at ``conf.py``:
 
 :::{seealso}
 Package configuration details, see [{MyST}theme](https://myst-parser.readthedocs.io/en/latest/intro.html>)
+ and [Sphinx Design Documentation](https://sphinx-design.readthedocs.io/en/latest/)
 :::
 
 <br>
@@ -161,6 +164,10 @@ Package configuration details, see [{MyST}theme](https://myst-parser.readthedocs
 
 ## Mermaid Diagramming
 
+:::{note}
+:class: margin
+This extension allows you to embed Mermaid graphs in your documents, including general flowcharts, sequence diagrams, gantt diagrams and more.
+:::
 
 Install ``sphinxcontrib-mermaid`` with ``conda``:
 
@@ -185,10 +192,14 @@ Theme configuration at ``conf.py``:
     'sphinxcontrib.mermaid',
     ..
     ]
-    
-<br>
-    
+   
 ```
+
+<br>
+
+:::{seealso}
+[Sphinx Mermaid Documentation](https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest/)
+:::
 
 <br>
 
@@ -230,22 +241,57 @@ Theme configuration at ``conf.py``:
 
 <br>
 
-## Warnings
+## config files
 
-*Human error possibilities*
+The following files needs to be configured
+
+### conf.py
+
+'conf.py' should contain:
+
+```{code-block}
+    :caption: theme configuration
+
+    extensions = [
+    ..
+    'myst_parser',                      # TODO Check with DevTeam if deprecated, replaced
+    'sphinx_design',
+    'sphinxcontrib.mermaid',
+    'sphinx_copybutton'
+    ..
+    ]
+```
+<br>
 
 :::{warning}
 
-    Order of extensions is relevant !
+Order of extensions is relevant !
 
-    .. code-block::
-
-        extensions = [
-        'myst_parser',
-        'sphinx_design',
-        'sphinxcontrib.mermaid',
-        ]
+```{code-block}
+     extensions = [
+    'myst_parser', 
+    'sphinx_design',
+    'sphinxcontrib.mermaid',
+    'sphinx_copybutton'
+    ]
+```
 :::
 
 <br>
 
+### 'requirements.txt'
+*mandatory for **readthedocs**, also see your config at `.readthedocs.yaml`* if it's declared there
+
+```{code-block}
+    :caption: theme configuration
+
+# For readthedocs needed, otherwise import to readthedocs will fail
+sphinx_book_theme
+myst-parser
+sphinx_design
+sphinxcontrib.mermaid
+sphinx_copybutton
+
+# TODO Check with DevTeam if 'requirements.txt' is necessary, reommended or just for readthedocs setup
+``` 
+<br>

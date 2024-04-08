@@ -1,4 +1,4 @@
-# Sphinx Installation
+# Basic Installation
 <br>
 
 ***
@@ -62,5 +62,5 @@ make clean
 
 :::
 
-***
+
 
