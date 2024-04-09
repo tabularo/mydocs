@@ -9,15 +9,22 @@
 
 <br>
 
-## make installer executeable
+## make installer executable
 
-| Command                              | Expected Output                                                                        |
-|--------------------------------------|----------------------------------------------------------------------------------------|
-| `ls -l`                              | rw-r--r-- 1 ubuusr ubuusr 1153404010 Sep 29 17:47 Anaconda3-2023.09-0-Linux-x86_64.sh  |
-| `chmod +x your_Anaconda_filename.sh` |                                                                                  |
-| `ls -l`                              | -rwxr-xr-x 1 ubuusr ubuusr 1153404010 Sep 29 17:47 Anaconda3-2023.09-0-Linux-x86_64.sh |
-| `bash your_Anaconda_filename.sh`     |                                                                             |   
-|                                |                                                                                        |
+| Command                              | Description                  | Expected Output                                                                                       |
+|--------------------------------------|------------------------------|-------------------------------------------------------------------------------------------------------|
+| `ls -l`                              | check permissions            | rw-r--r-- 1 user user 1153404010 Sep 29 17:47 your_Anaconda_filename.sh |
+| `chmod +x your_Anaconda_filename.sh` | modify permission            |                                                                                                       |
+| `ls -l`                              | check if permissions modified| -rwxr-xr-x 1 user user 1153404010 Sep 29 17:47 your_Anaconda_filename.sh |
+
+
+## run installer, update & clone base env
+
+| Command                              | Expected Output       |
+|--------------------------------------|-----------------------|
+| `bash your_Anaconda_filename.sh`     | run installer         |   
+| `conda --version`                     | check current version |
+| 
 
 
 
