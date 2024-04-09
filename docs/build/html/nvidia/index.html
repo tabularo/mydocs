@@ -51,7 +51,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'nvidia/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Anaconda@Ubuntu Installation" href="../anaconda/ubuntu_installation.html" />
+    <link rel="next" title="NVIDIA @ Windows" href="nvidia_windows_driver/nvidia_windows_driver.html" />
+    <link rel="prev" title="Anaconda@Ubuntu Installation" href="../anaconda/anaconda_ubuntu_installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,12 +171,17 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../wsl2_windows/index.html">WSL2 @ Windows</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anaconda/ubuntu_installation.html">Anaconda@Ubuntu Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anaconda/anaconda_ubuntu_installation.html">Anaconda@Ubuntu Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">NVIDIA</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">NVIDIA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA @ Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html">CUDA @ WSL2 Ubuntu</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -316,9 +322,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -334,16 +338,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-cuda-driver">NVIDIA &amp; CUDA Driver</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-installer">NVIDIA Installer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-driver">CUDA Driver</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -355,84 +349,56 @@ document.write(`
                   
   <section id="nvidia">
 <h1>NVIDIA<a class="headerlink" href="#nvidia" title="Permalink to this heading">#</a></h1>
-<p>This documentation is specifically crafted to aid users in navigating the intricacies of utilizing TensorFlow. It provides insight into crucial details concerning NVIDIA and CUDA drivers and their integration with TensorFlow, aiming to enhance understanding in this aspect.</p>
-<section id="nvidia-cuda-driver">
-<h2>NVIDIA &amp; CUDA Driver<a class="headerlink" href="#nvidia-cuda-driver" title="Permalink to this heading">#</a></h2>
-<p><img alt="image" src="../_images/nvidia-smi.png" /></p>
+<p>This chapter is about installing NVIDIA Drivers, CUDA on Linux and some notes about tensorflow[and-cuda] package.</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>No</p></th>
-<th class="head"><p></p></th>
-<th class="head"><p></p></th>
+<tr class="row-odd"><th class="head"><p>Installation Tasks</p></th>
+<th class="head"><p>Target Platform</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>cmd</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></p></td>
+<tr class="row-even"><td><p>Install NVIDIA Drivers</p></td>
+<td><p>Windows</p></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>installed</p></td>
-<td><p>NIVIA driver version</p></td>
+<tr class="row-odd"><td><p>Install CUDA</p></td>
+<td><p>Linux</p></td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>highest possible</p></td>
-<td><p>CUDA version</p></td>
+<tr class="row-even"><td><p>Info TensorFlow with CUDA package</p></td>
+<td><p>Python</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>CUDA Version: This is <strong>not</strong> the installed CUDA version, this is the highest possible version compatible with the current NVIDIA driver.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA &#64; Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nvidia_windows_driver/nvidia_windows_driver.html#nvidia-cuda-driver">NVIDIA &amp; CUDA Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvidia_windows_driver/nvidia_windows_driver.html#nvidia-installer">NVIDIA Installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvidia_windows_driver/nvidia_windows_driver.html#cuda-driver">CUDA Driver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cuda_linux/cuda_linux.html">CUDA &#64; WSL2 Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#installing-cuda-toolkit-11-8">Installing CUDA Toolkit 11.8</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#download-the-cuda-repository-package">1. Download the CUDA repository package:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#move-the-downloaded-file-to-etc-apt-preferences-d-directory">2. Move the downloaded file to /etc/apt/preferences.d/ directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#download-cuda-11-8-installation-package">3. Download CUDA 11.8 installation package:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#install-the-downloaded-cuda-package">4. Install the downloaded CUDA package:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#copy-the-keyring-file-to-the-appropriate-directory">5. Copy the keyring file to the appropriate directory:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#update-your-repository-information">6. Update your repository information:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#adding-cuda-to-system-paths">Adding CUDA to System Paths</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#step-1-open-bashrc">Step 1: Open .bashrc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#step-2-insert-conda-configuration">Step 2: Insert Conda Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#step-3-save-and-exit-nano">Step 3: Save and Exit Nano</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#verify-cuda-version">Verify CUDA version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#removing-the-cuda-toolkit">Removing the CUDA Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#nvidia-com-links">NVIDIA.com Links</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<br>
-</section>
-<section id="nvidia-installer">
-<h2>NVIDIA Installer<a class="headerlink" href="#nvidia-installer" title="Permalink to this heading">#</a></h2>
-<p><img alt="image" src="../_images/nvidia_installer.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>NVIDIA installer has the option for <code class="docutils literal notranslate"><span class="pre">clean</span> <span class="pre">installation</span></code>. This could be useful, if you make changes in the driver configuration.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Windows Command Prompt as admin</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">cd</span> \<span class="n">Windows</span>\<span class="n">System32</span>\<span class="n">lxss</span>\<span class="n">lib</span>
-    <span class="o">&gt;</span> <span class="k">del</span> <span class="n">libcuda</span><span class="o">.</span><span class="n">so</span>
-    <span class="o">&gt;</span> <span class="k">del</span> <span class="n">libcuda</span><span class="o">.</span><span class="n">so</span><span class="mf">.1</span>
-    <span class="o">&gt;</span> <span class="n">mklink</span> <span class="n">libcuda</span><span class="o">.</span><span class="n">so</span> <span class="n">libcuda</span><span class="o">.</span><span class="n">so</span><span class="mf">.1.1</span>
-    <span class="o">&gt;</span> <span class="n">mklink</span> <span class="n">libcuda</span><span class="o">.</span><span class="n">so</span><span class="mf">.1</span> <span class="n">libcuda</span><span class="o">.</span><span class="n">so</span><span class="mf">.1.1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<br>
-</section>
-<section id="cuda-driver">
-<h2>CUDA Driver<a class="headerlink" href="#cuda-driver" title="Permalink to this heading">#</a></h2>
-<p><img alt="image" src="../_images/nvcc--version.png" /></p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>No</p></th>
-<th class="head"><p></p></th>
-<th class="head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>cmd</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">nvcc</span> <span class="pre">--version</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>installed</p></td>
-<td><p>CUDA version</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>CUDA Version: ´nvcc –version´ returns the installed CUDA version <strong>on your system</strong>, that doesn’t mean <code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code> will use it in your <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">environment</span></code>. <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tensorflow[and-cuda]</span></code> will install it’s on CUDA and CUDnn drivers. If you check the drivers in Python, you have to separte between system and environment installations.</p>
-</div>
-<br>
-</section>
 </section>
 
 
@@ -447,13 +413,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../anaconda/ubuntu_installation.html"
+       href="../anaconda/anaconda_ubuntu_installation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Anaconda&#64;Ubuntu Installation</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="nvidia_windows_driver/nvidia_windows_driver.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">NVIDIA &#64; Windows</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -462,22 +437,7 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-cuda-driver">NVIDIA &amp; CUDA Driver</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-installer">NVIDIA Installer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-driver">CUDA Driver</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>

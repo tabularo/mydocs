@@ -14,13 +14,22 @@ From installing Anaconda to optimizing Linux systems, from configuring essential
 
 So, whether you're setting up your environment for the first time or refreshing your memory on a particular setup, dive into this documentation and unlock the efficiencies and best practices that will streamline your data science workflows. Let's make your journey in data science as smooth and productive as possible. Happy cooking!
 
+|
+|
+|
+
+----------------------
+
 .. toctree::
    :maxdepth: 2
    :caption: Software & Frameworks:
 
    sphinx/index
+   wsl2_windows/index
    anaconda/index
    nvidia/index
+
+
 
 Indices and tables
 ==================

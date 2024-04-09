@@ -51,14 +51,7 @@ You could remove the build with
 
 :::{tip} 
 
-Keep these commands in mind, you'll use them frequently. If you make any changes to your documentation perform a `make clean` to delete everything in your *build* and perform `make html` to rebuild your *build* with all changes.
-
-```bash
-make html
-make clean
-```
-
-<br>
+Keep the commands `make clean` and `make html` in mind, you'll use them frequently.
 
 :::
 
