@@ -12,6 +12,7 @@ Welcome to mydocs's documentation!
 
    sphinx/index
    anaconda/index
+   nvidia/index
 
 Indices and tables
 ==================

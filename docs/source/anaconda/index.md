@@ -11,4 +11,5 @@ This chapter is about installing **sphinx**, my preferred theme **sphinx-book-th
 
 ```{toctree}
 cheetsheet_conda
+ubuntu_installation
 ```
