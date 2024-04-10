@@ -1,5 +1,4 @@
-# Data Science Environment Toolbox
-## mydocs@readthedocs
+# mydocs@readthedocs
 
 Sphinx documentation with Sphinx-Book-Theme.
 
