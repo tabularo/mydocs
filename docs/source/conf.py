@@ -63,7 +63,7 @@ html_title = 'mydocs'
 
 html_theme_options = {
 "repository_provider": 'github',
-    "repository_url": 'https://github.com/tabularo/',
+    "repository_url": 'https://github.com/tabularo/mydocs/',
     "use_repository_button": True,
     "use_edit_page_button": True,
     "use_issues_button": True,
