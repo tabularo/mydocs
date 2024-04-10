@@ -51,6 +51,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'nvidia/cuda_linux/cuda_linux';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="cuDNN @ WSL2 Ubuntu" href="../cudnn_linux/cudnn_linux.html" />
     <link rel="prev" title="NVIDIA @ Windows" href="../nvidia_windows_driver/nvidia_windows_driver.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,6 +180,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">NVIDIA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA @ Windows</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">CUDA @ WSL2 Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cudnn_linux/cudnn_linux.html">cuDNN @ WSL2 Ubuntu</a></li>
 </ul>
 </li>
 </ul>
@@ -490,7 +492,7 @@ document.write(`
 </section>
 <section id="removing-the-cuda-toolkit">
 <h2>Removing the CUDA Toolkit<a class="headerlink" href="#removing-the-cuda-toolkit" title="Permalink to this heading">#</a></h2>
-<p>If you need to uninstall the CUDA Toolkit, refer to the official <a class="reference external" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/">CUDA Documentation</a> for instructions. Here’s the main command to do so:</p>
+<p>If you need to uninstall the CUDA Toolkit, refer to the official <a class="reference external" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#removing-cuda-toolkit-and-driver">CUDA Documentation</a> for instructions. Here’s the main command to do so:</p>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id11" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>--purge<span class="w"> </span>remove<span class="w"> </span><span class="s2">&quot;*cuda*&quot;</span><span class="w"> </span><span class="s2">&quot;*cublas*&quot;</span><span class="w"> </span><span class="s2">&quot;*cufft*&quot;</span><span class="w"> </span><span class="s2">&quot;*cufile*&quot;</span><span class="w"> </span><span class="s2">&quot;*curand*&quot;</span><span class="w"> </span><span class="s2">&quot;*cusolver*&quot;</span><span class="w"> </span><span class="s2">&quot;*cusparse*&quot;</span><span class="w"> </span><span class="s2">&quot;*npp*&quot;</span><span class="w"> </span><span class="s2">&quot;*nvjpeg*&quot;</span><span class="w"> </span><span class="s2">&quot;*nvvm*&quot;</span>
@@ -538,6 +540,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">NVIDIA &#64; Windows</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../cudnn_linux/cudnn_linux.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">cuDNN &#64; WSL2 Ubuntu</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

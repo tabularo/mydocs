@@ -15,4 +15,5 @@ This chapter is about installing NVIDIA Drivers, CUDA on Linux and some notes ab
 ```{toctree}
 nvidia_windows_driver/nvidia_windows_driver
 cuda_linux/cuda_linux
+cudnn_linux/cudnn_linux
 ```

@@ -107,7 +107,7 @@ After installing your CUDA version, verify the installation using the following 
 ```
 
 ## Removing the CUDA Toolkit
-If you need to uninstall the CUDA Toolkit, refer to the official [CUDA Documentation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/) for instructions. Here's the main command to do so:
+If you need to uninstall the CUDA Toolkit, refer to the official [CUDA Documentation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#removing-cuda-toolkit-and-driver) for instructions. Here's the main command to do so:
 
 ```{code-block} bash
    :caption: Terminal   
