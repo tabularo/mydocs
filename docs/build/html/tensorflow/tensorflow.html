@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Anaconda@Ubuntu Installation &#8212; mydocs</title>
+    <title>TensorFlow &#8212; mydocs</title>
   
   
   
@@ -48,11 +48,11 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'anaconda/anaconda_ubuntu_installation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tensorflow/tensorflow';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="NVIDIA" href="../nvidia/index.html" />
-    <link rel="prev" title="MyConda Cheet Sheet" href="cheetsheet_conda.html" />
+    <link rel="next" title="TensorRT" href="tensorrt.html" />
+    <link rel="prev" title="TensorFlow" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,15 +172,22 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../wsl2_windows/index.html">WSL2 @ Windows</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Anaconda</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Anaconda@Ubuntu Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anaconda/installation_ubuntu.html">Installation @Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anaconda/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nvidia/index.html">NVIDIA</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../nvidia/nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA @ Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nvidia/cuda_linux/cuda_linux.html">CUDA @ WSL2 Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nvidia/cudnn_linux/cudnn_linux.html">cuDNN @ WSL2 Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nvidia/bashrc/bashrc.html">.bashrc</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">TensorFlow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">TensorFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensorrt.html">TensorRT</a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +261,7 @@
       
       
       
-      <li><a href="https://github.com/tabularo/mydocs/edit/main/anaconda/anaconda_ubuntu_installation.md" target="_blank"
+      <li><a href="https://github.com/tabularo/mydocs/edit/main/tensorflow/tensorflow.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/tabularo/mydocs/issues/new?title=Issue%20on%20page%20%2Fanaconda/anaconda_ubuntu_installation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/tabularo/mydocs/issues/new?title=Issue%20on%20page%20%2Ftensorflow/tensorflow.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +308,7 @@
       
       
       
-      <li><a href="../_sources/anaconda/anaconda_ubuntu_installation.md" target="_blank"
+      <li><a href="../_sources/tensorflow/tensorflow.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Anaconda@Ubuntu Installation</h1>
+    <h1>TensorFlow</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -395,16 +402,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-installer">Download Installer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-installer-executable">Make Installer Executable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-installer">Run Installer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-installation-steps">Post-Installation Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-bashrc-file">Configuring the .bashrc File</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-bashrc">Step 1: Open .bashrc</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-insert-conda-configuration">Step 2: Insert Conda Configuration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-save-and-exit-nano">Step 3: Save and Exit Nano</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-tensorflow-package">Option 1: TensorFlow <em>package</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-tensorflow-and-cuda-package">Option 2: TensorFlow[and-cuda] <em>package</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Installation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-installation">Verify Installation</a></li>
 </ul>
             </nav>
         </div>
@@ -416,143 +424,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="anaconda-ubuntu-installation">
-<h1>Anaconda&#64;Ubuntu Installation<a class="headerlink" href="#anaconda-ubuntu-installation" title="Permalink to this heading">#</a></h1>
-<section id="download-installer">
-<h2>Download Installer<a class="headerlink" href="#download-installer" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Description</p></th>
-<th class="head"><p>Link</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Anaconda installer</p></td>
-<td><p><a class="reference external" href="https://www.anaconda.com/download#linux">Click here</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Anaconda installer file hashes</p></td>
-<td><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/hashes/">Click here</a></p></td>
-</tr>
-</tbody>
-</table>
+  <section id="tensorflow">
+<h1>TensorFlow<a class="headerlink" href="#tensorflow" title="Permalink to this heading">#</a></h1>
+<p>This guide is for installing TensorFlow with GPU support on Windows WSL2.</p>
+<section id="option-1-tensorflow-package">
+<h2>Option 1: TensorFlow <em>package</em><a class="headerlink" href="#option-1-tensorflow-package" title="Permalink to this heading">#</a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h3>
+<p>Verify that <code class="docutils literal notranslate"><span class="pre">NVIDIA</span> <span class="pre">GPU</span> <span class="pre">Driver</span></code> is installed</p>
+<ul class="simple">
+<li><p>Verify, see <a class="reference external" href="http://localhost:63342/mydocs/docs/build/html/nvidia/nvidia_windows_driver/nvidia_windows_driver.html">Verfiy NIDIA Driver <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a></p></li>
+<li><p>In this documentation called “option 1”, you need to install CUDA local on your WSL2 guest, see <a class="reference external" href="http://localhost:63342/mydocs/docs/build/html/nvidia/index.html">NVIDIA</a></p></li>
+</ul>
 </section>
-<section id="make-installer-executable">
-<h2>Make Installer Executable<a class="headerlink" href="#make-installer-executable" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Expected Output</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code></p></td>
-<td><p>Check permissions</p></td>
-<td><p>Outputs <code class="docutils literal notranslate"><span class="pre">-rw-r--r--</span> <span class="pre">1</span> <span class="pre">user</span> <span class="pre">user</span> <span class="pre">...</span> <span class="pre">your_Anaconda_filename.sh</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">your_Anaconda_filename.sh</span></code></p></td>
-<td><p>Modify permission</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code></p></td>
-<td><p>Verify permission modification</p></td>
-<td><p>Outputs <code class="docutils literal notranslate"><span class="pre">-rwxr-xr-x</span> <span class="pre">1</span> <span class="pre">user</span> <span class="pre">user</span> <span class="pre">...</span> <span class="pre">your_Anaconda_filename.sh</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="run-installer">
-<h2>Run Installer<a class="headerlink" href="#run-installer" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">your_Anaconda_filename.sh</span></code></p></td>
-<td><p>This will run the installer</p></td>
-</tr>
-</tbody>
-</table>
-<br>
-<p>During the installation process, you’ll be prompted with the question:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   Do you wish the installer to initialize Anaconda3
-   by running conda init? [yes|no]
-   [no] &gt;&gt;&gt; yes
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
+<p>Installation is straightforward</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install --upgrade pip
+pip install tensorflow==2.13
 </pre></div>
 </div>
-<p>Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press Enter to continue.</p>
-<br>
 </section>
-<section id="post-installation-steps">
-<h2>Post-Installation Steps<a class="headerlink" href="#post-installation-steps" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code></p></td>
-<td><p>Check current Anaconda version</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code></p></td>
-<td><p>Update Conda to the latest version</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">myenv</span> <span class="pre">--clone</span> <span class="pre">base</span></code></p></td>
-<td><p>Clone the base environment</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code></p></td>
-<td><p>Verify installation by showing a list of installed packages</p></td>
-</tr>
-</tbody>
-</table>
-<p>Remember, you should restart the terminal after installing Anaconda. In some cases, changes might not take effect until the system is restarted.</p>
-<br>
 </section>
-<section id="configuring-the-bashrc-file">
-<h2>Configuring the .bashrc File<a class="headerlink" href="#configuring-the-bashrc-file" title="Permalink to this heading">#</a></h2>
-<p>After setting up a working Anaconda environment, it’s is also recommended to configure the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file for Conda.</p>
-<section id="step-1-open-bashrc">
-<h3>Step 1: Open .bashrc<a class="headerlink" href="#step-1-open-bashrc" title="Permalink to this heading">#</a></h3>
-<p>Open the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file in your home directory using a text editor. In this case, Nano is used.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>nano<span class="w"> </span>~/.bashrc
+<section id="option-2-tensorflow-and-cuda-package">
+<h2>Option 2: TensorFlow[and-cuda] <em>package</em><a class="headerlink" href="#option-2-tensorflow-and-cuda-package" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Prerequisites<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>No prerequisites, except installing NVIDIA Graphics driver on your windows machine, do nothing ;-)</p>
+</section>
+<section id="id2">
+<h3>Installation<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Installation is straightforward</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install --upgrade pip
+pip install tensorflow[and-cuda]
 </pre></div>
 </div>
-</div>
 </section>
-<section id="step-2-insert-conda-configuration">
-<h3>Step 2: Insert Conda Configuration<a class="headerlink" href="#step-2-insert-conda-configuration" title="Permalink to this heading">#</a></h3>
-<p>At the end of the file, insert the following Conda configuration:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="c1"># Conda config</span>
-<span class="w">  </span>conda<span class="w"> </span>deactivate
-<span class="w">  </span>conda<span class="w"> </span>activate<span class="w"> </span>baseclone
-</pre></div>
-</div>
-</div>
-<p>By adding these lines to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file, you ensure that every time a new bash session starts, it will initialize Conda and activate the <code class="docutils literal notranslate"><span class="pre">baseclone</span></code> environment.</p>
 </section>
-<section id="step-3-save-and-exit-nano">
-<h3>Step 3: Save and Exit Nano<a class="headerlink" href="#step-3-save-and-exit-nano" title="Permalink to this heading">#</a></h3>
-<p>While in Nano editor, you can save your changes and exit by using the following shortcuts:</p>
+<section id="verify-installation">
+<h2>Verify Installation<a class="headerlink" href="#verify-installation" title="Permalink to this heading">#</a></h2>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="sb">`</span>Ctrl<span class="w"> </span>+<span class="w"> </span>O<span class="sb">`</span><span class="w">           </span><span class="c1"># to save the file.</span>
-<span class="w">   </span>
-<span class="w">   </span><span class="sb">`</span>Ctrl<span class="w"> </span>+<span class="w"> </span>X<span class="sb">`</span><span class="w">           </span><span class="c1"># to exit the nano editor.</span>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import tensorflow as tf; print(tf.config.list_physical_devices(&#39;GPU&#39;))&quot;</span>
 </pre></div>
 </div>
 </div>
-<p>After saving the changes and closing the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file, you may need to restart your terminal for the changes to take effect.</p>
-<br>
-</section>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You could expect some error messages, that doesn’t mean TensorFlow didn’t work properly. For me, April 2024, tensorflow v2.13, still works best.</p>
+<p>From my side you could ignore, error/warings, like:</p>
+<blockquote>
+<div><p>I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Your kernel may have been built without NUMA support.</p>
+</div></blockquote>
+<p>This is the important part:</p>
+<blockquote>
+<div><p>[PhysicalDevice(name=’/physical_device:GPU:0’, device_type=’GPU’)]</p>
+</div></blockquote>
+<p>That means GPU is available.</p>
+</div>
 </section>
 </section>
 
@@ -568,20 +501,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cheetsheet_conda.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">MyConda Cheet Sheet</p>
+        <p class="prev-next-title">TensorFlow</p>
       </div>
     </a>
     <a class="right-next"
-       href="../nvidia/index.html"
+       href="tensorrt.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">NVIDIA</p>
+        <p class="prev-next-title">TensorRT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -601,16 +534,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-installer">Download Installer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-installer-executable">Make Installer Executable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-installer">Run Installer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-installation-steps">Post-Installation Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-bashrc-file">Configuring the .bashrc File</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-bashrc">Step 1: Open .bashrc</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-insert-conda-configuration">Step 2: Insert Conda Configuration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-save-and-exit-nano">Step 3: Save and Exit Nano</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-tensorflow-package">Option 1: TensorFlow <em>package</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-tensorflow-and-cuda-package">Option 2: TensorFlow[and-cuda] <em>package</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Installation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-installation">Verify Installation</a></li>
 </ul>
   </nav></div>
 

@@ -174,13 +174,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../wsl2_windows/index.html">WSL2 @ Windows</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../anaconda/anaconda_ubuntu_installation.html">Anaconda@Ubuntu Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anaconda/installation_ubuntu.html">Installation @Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anaconda/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">NVIDIA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">NVIDIA @ Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cuda_linux/cuda_linux.html">CUDA @ WSL2 Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cudnn_linux/cudnn_linux.html">cuDNN @ WSL2 Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bashrc/bashrc.html">.bashrc</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tensorflow/index.html">TensorFlow</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tensorflow/tensorrt.html">TensorRT</a></li>
 </ul>
 </li>
 </ul>
@@ -411,6 +417,11 @@ document.write(`
                   
   <section id="nvidia-windows">
 <h1>NVIDIA &#64; Windows<a class="headerlink" href="#nvidia-windows" title="Permalink to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>TensorFlow with GPU support for WSL2 on Windows</strong></p>
+<p>Install NVIDIA Driver <strong>only</strong> on Windows (Host) not on WSL2 (Guest)!</p>
+</div>
 <p>This documentation is designed to serve as a helpful resource for users navigating the installation, maintenance, and operation of a TensorFlow environment. While it may not cover every aspect comprehensively, its goal is to provide assistance where needed.</p>
 <p>Specifically, this documentation aims to address important details concerning the integration of NVIDIA and CUDA drivers with TensorFlow. These are challenges that I have personally encountered and observed others facing, hence their inclusion in this guide.</p>
 <section id="nvidia-installer">

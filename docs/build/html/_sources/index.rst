@@ -13,7 +13,7 @@ Data Science Environment Toolbox
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |
 
-This documentation is for setting up and maintaining  data science development environments! A collection of practical setups and best practices tailored specifically for typical data science applications and frameworks. This documentation is crafted in a cookbook style, focusing on frequently used tasks, handy cheat sheets, and step-by-step instructions for common setups.
+This documentation is for setting up and maintaining  data science development workstations and environments! A collection of practical setups and best practices tailored specifically for typical data science applications and frameworks. This documentation is crafted in a cookbook style, focusing on frequently used tasks, handy cheat sheets, and step-by-step instructions for common setups.
 
 In the fast-paced world of data science, nuances of setting up environments, installing software, and configuring frameworks often pose significant challenges. Overlooked settings or misconfigurations can lead to unnecessary complications and setbacks. Whether it's initiating a basic Python environment or deploying CUDA-accelerated applications on Linux-based systems, the process can be daunting. This documentation offers valuable insights and practical guidance to ease these complexities. It provides a curated selection of need-to-know tasks, tools, and configurations to help maintain a robust data science environment, ensuring smoother progression in the exploration and application of data science.
 
@@ -35,6 +35,7 @@ Happy cooking!
    wsl2_windows/index
    anaconda/index
    nvidia/index
+   tensorflow/index
 
 
 

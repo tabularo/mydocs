@@ -175,13 +175,20 @@
 <li class="toctree-l1"><a class="reference internal" href="wsl2_windows/index.html">WSL2 @ Windows</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="anaconda/anaconda_ubuntu_installation.html">Anaconda@Ubuntu Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anaconda/installation_ubuntu.html">Installation @Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anaconda/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="nvidia/index.html">NVIDIA</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="nvidia/nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA @ Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvidia/cuda_linux/cuda_linux.html">CUDA @ WSL2 Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nvidia/cudnn_linux/cudnn_linux.html">cuDNN @ WSL2 Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvidia/bashrc/bashrc.html">.bashrc</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tensorflow/index.html">TensorFlow</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow/tensorflow.html">TensorFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow/tensorrt.html">TensorRT</a></li>
 </ul>
 </li>
 </ul>
@@ -424,7 +431,7 @@ document.write(`
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>This documentation is for setting up and maintaining  data science development environments! A collection of practical setups and best practices tailored specifically for typical data science applications and frameworks. This documentation is crafted in a cookbook style, focusing on frequently used tasks, handy cheat sheets, and step-by-step instructions for common setups.</p>
+<p>This documentation is for setting up and maintaining  data science development workstations and environments! A collection of practical setups and best practices tailored specifically for typical data science applications and frameworks. This documentation is crafted in a cookbook style, focusing on frequently used tasks, handy cheat sheets, and step-by-step instructions for common setups.</p>
 <p>In the fast-paced world of data science, nuances of setting up environments, installing software, and configuring frameworks often pose significant challenges. Overlooked settings or misconfigurations can lead to unnecessary complications and setbacks. Whether it’s initiating a basic Python environment or deploying CUDA-accelerated applications on Linux-based systems, the process can be daunting. This documentation offers valuable insights and practical guidance to ease these complexities. It provides a curated selection of need-to-know tasks, tools, and configurations to help maintain a robust data science environment, ensuring smoother progression in the exploration and application of data science.</p>
 <p>This documentation is a living document, not a static resource, and evolves alongside advancements in the field of data science. It embodies practical advice, hands-on instructions, and real-life setups. This is the junction where theory meets application, delving into particular software configurations, examining hardware setups, and sharing optimization strategies for commonly-used data science tools. As a thorough hub of practical knowledge and experience, the documentation continually adapts and expands, ensuring up-to-date, pertinent, and direct solutions are always accessible.</p>
 <p>Happy cooking!</p>
@@ -451,13 +458,19 @@ document.write(`
 </li>
 <li class="toctree-l1"><a class="reference internal" href="anaconda/index.html">Anaconda</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="anaconda/anaconda_ubuntu_installation.html">Anaconda&#64;Ubuntu Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anaconda/installation_ubuntu.html">Installation &#64;Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anaconda/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="nvidia/index.html">NVIDIA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nvidia/nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA &#64; Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nvidia/cuda_linux/cuda_linux.html">CUDA &#64; WSL2 Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nvidia/cudnn_linux/cudnn_linux.html">cuDNN &#64; WSL2 Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvidia/index.html#tensorflow-gpu-support">TensorFlow GPU support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvidia/index.html#install-options">Install options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nvidia/index.html#installation-tasks">Installation Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensorflow/index.html">TensorFlow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow/index.html#software-installation-dependency-chart">Software Installation Dependency Chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow/index.html#table-of-content">Table of content</a></li>
 </ul>
 </li>
 </ul>

@@ -51,6 +51,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'nvidia/cudnn_linux/cudnn_linux';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title=".bashrc" href="../bashrc/bashrc.html" />
     <link rel="prev" title="CUDA @ WSL2 Ubuntu" href="../cuda_linux/cuda_linux.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,13 +174,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../wsl2_windows/index.html">WSL2 @ Windows</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../anaconda/anaconda_ubuntu_installation.html">Anaconda@Ubuntu Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anaconda/installation_ubuntu.html">Installation @Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anaconda/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">NVIDIA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA @ Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cuda_linux/cuda_linux.html">CUDA @ WSL2 Ubuntu</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">cuDNN @ WSL2 Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bashrc/bashrc.html">.bashrc</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tensorflow/index.html">TensorFlow</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tensorflow/tensorrt.html">TensorRT</a></li>
 </ul>
 </li>
 </ul>
@@ -403,6 +410,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-the-permission">5. Modify the permission:</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-cuda-library-links">Updating CUDA Library Links</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-powershell-as-admin">1. Open Powershell <em>as admin</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-directory">2. Change directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-existing-files">3. Delete existing files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-symlinks">3. Create Symlinks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restart-ws">4. Restart WS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-cudnn-to-system-paths">5. Adding cuDNN to System Paths</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uninstall-update-cudnn">Uninstall / Update cuDNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-files-to-be-removed">1. Identify the Files to be Removed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-cudann-library-files">2. Remove CUDAnn Library Files</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-com-links">NVIDIA.com Links</a></li>
 </ul>
             </nav>
@@ -441,7 +462,7 @@ document.write(`
 <h3>1. Install the zlib1g package:<a class="headerlink" href="#install-the-zlib1g-package" title="Permalink to this heading">#</a></h3>
 <p>Install the zlib1g library as superuser.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>zlib1g
 </pre></div>
 </div>
@@ -451,7 +472,7 @@ document.write(`
 <h3>2. Extract the downloaded tar.xz file:<a class="headerlink" href="#extract-the-downloaded-tar-xz-file" title="Permalink to this heading">#</a></h3>
 <p>Extract the downloaded cuDNN tar.xz file:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>tar<span class="w"> </span>-xvf<span class="w"> </span>cudnn-linux-x86_64-8.6.0.163_cuda11-archive.tar.xz
 </pre></div>
 </div>
@@ -461,7 +482,7 @@ document.write(`
 <h3>3. Copy the extracted  files to the CUDA include directory:<a class="headerlink" href="#copy-the-extracted-files-to-the-cuda-include-directory" title="Permalink to this heading">#</a></h3>
 <p>Copy the header files from the ‘include’ directory in the extracted folder to the CUDA ‘include’ directory.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>sudo<span class="w"> </span>cp<span class="w"> </span>cudnn-*-archive/include/cudnn*.h<span class="w"> </span>/usr/local/cuda/include<span class="w"> </span>
 </pre></div>
 </div>
@@ -471,7 +492,7 @@ document.write(`
 <h3>4. Copy the files to the CUDA lib64 directory:<a class="headerlink" href="#copy-the-files-to-the-cuda-lib64-directory" title="Permalink to this heading">#</a></h3>
 <p>Copy the library files from the ‘lib’ directory in the extracted folder to the ‘lib64’ directory in the CUDA folder.</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>sudo<span class="w"> </span>cp<span class="w"> </span>-P<span class="w"> </span>cudnn-*-archive/lib/libcudnn*<span class="w"> </span>/usr/local/cuda/lib64<span class="w"> </span>
 </pre></div>
 </div>
@@ -481,7 +502,7 @@ document.write(`
 <h3>5. Modify the permission:<a class="headerlink" href="#modify-the-permission" title="Permalink to this heading">#</a></h3>
 <p>Change the permission of the copied files to provide read access to all users.</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>sudo<span class="w"> </span>chmod<span class="w"> </span>a+r<span class="w"> </span>/usr/local/cuda/include/cudnn*.h<span class="w"> </span>/usr/local/cuda/lib64/libcudnn*
 </pre></div>
 </div>
@@ -491,6 +512,99 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Please be aware that all commands should be executed in a Linux terminal. The provided code has been tested on an Ubuntu 22.04 system with CuDNN 8.6. Therefore, ensure to replace specific version identifiers like <code class="docutils literal notranslate"><span class="pre">8.6.0.163_cuda11</span></code> in the given examples with the actual versions in use on your system.</p>
 </div>
+<br>
+</section>
+</section>
+<section id="updating-cuda-library-links">
+<h2>Updating CUDA Library Links<a class="headerlink" href="#updating-cuda-library-links" title="Permalink to this heading">#</a></h2>
+<p><strong>Updating CUDA Library Symbolic Links &#64; Windows (WSL2 host)</strong></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Modifications we do here, these files are created by <a class="reference internal" href="../nvidia_windows_driver/nvidia_windows_driver.html"><span class="doc std std-doc">NVIDIA Installer</span></a>. Also keep in mind if you reinstall the <code class="docutils literal notranslate"><span class="pre">NVIDIA</span> <span class="pre">Driver</span></code> this modifications will be overwritten.</p>
+</div>
+<section id="open-powershell-as-admin">
+<h3>1. Open Powershell <em>as admin</em><a class="headerlink" href="#open-powershell-as-admin" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>Run the commands below in Windows <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Prompt</span></code> or <code class="docutils literal notranslate"><span class="pre">Powershell</span></code> <strong>as admin</strong> (thanks to Roy Shilkrot) and restart your WSL2.</p>
+</div></blockquote>
+</section>
+<section id="change-directory">
+<h3>2. Change directory<a class="headerlink" href="#change-directory" title="Permalink to this heading">#</a></h3>
+<p>Navigate you into the \Windows\System32\lxss\lib directory</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Powershell (WSL2 host)</span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nb">cd</span><span class="w"> </span><span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\l</span>xss<span class="se">\l</span>ib
+</pre></div>
+</div>
+</div>
+</section>
+<section id="delete-existing-files">
+<h3>3. Delete existing files<a class="headerlink" href="#delete-existing-files" title="Permalink to this heading">#</a></h3>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Powershell (WSL2 host)</span><a class="headerlink" href="#id7" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>del<span class="w"> </span>libcuda.so<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>del<span class="w"> </span>libcuda.so.1
+</pre></div>
+</div>
+</div>
+</section>
+<section id="create-symlinks">
+<h3>3. Create Symlinks<a class="headerlink" href="#create-symlinks" title="Permalink to this heading">#</a></h3>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Powershell (WSL2 host)</span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>mklink<span class="w"> </span>libcuda.so<span class="w"> </span>libcuda.so.1.1<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mklink<span class="w"> </span>libcuda.so.1<span class="w"> </span>libcuda.so.1.1<span class="w"> </span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="restart-ws">
+<h3>4. Restart WS<a class="headerlink" href="#restart-ws" title="Permalink to this heading">#</a></h3>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Powershell (WSL2 host)</span><a class="headerlink" href="#id9" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># shuts down all running WSL2 instances</span>
+<span class="w">  </span>wsl<span class="w"> </span>--shutdown
+<span class="w">  </span>
+<span class="w">  </span><span class="c1"># Starting a new WSL instance which restarts the service automatically</span>
+<span class="w">  </span>wsl
+</pre></div>
+</div>
+</div>
+</section>
+<section id="adding-cudnn-to-system-paths">
+<h3>5. Adding cuDNN to System Paths<a class="headerlink" href="#adding-cudnn-to-system-paths" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>see <a class="reference internal" href="../bashrc/bashrc.html"><span class="doc std std-doc">.bashrc configurations &gt; adding cuDNN to system path</span></a></p>
+</div></blockquote>
+</section>
+</section>
+<section id="uninstall-update-cudnn">
+<h2>Uninstall / Update cuDNN<a class="headerlink" href="#uninstall-update-cudnn" title="Permalink to this heading">#</a></h2>
+<section id="identify-the-files-to-be-removed">
+<h3>1. Identify the Files to be Removed<a class="headerlink" href="#identify-the-files-to-be-removed" title="Permalink to this heading">#</a></h3>
+<p>In the default installation, cudnn files are located at:</p>
+<ul class="simple">
+<li><p>path: <code class="docutils literal notranslate"><span class="pre">/usr/local/cuda/include/</span></code> - file names: <code class="docutils literal notranslate"><span class="pre">cudnn*.h</span></code></p></li>
+<li><p>path: <code class="docutils literal notranslate"><span class="pre">/usr/local/cuda/lib64/</span></code> - file names: <code class="docutils literal notranslate"><span class="pre">libcudnn*</span></code></p></li>
+</ul>
+<p>These are the files that were copied during the cudnn installation.</p>
+</section>
+<section id="remove-cudann-library-files">
+<h3>2. Remove CUDAnn Library Files<a class="headerlink" href="#remove-cudann-library-files" title="Permalink to this heading">#</a></h3>
+<p>To uninstall CUDAnn, these files need to be removed, open the terminal and execute the following commands:</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id10" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>sudo<span class="w"> </span>rm<span class="w"> </span>/usr/local/cuda/include/cudnn*.h<span class="w"> </span>/usr/local/cuda/lib64/libcudnn*
+</pre></div>
+</div>
+</div>
+<p>After executing these commands, the CUDAnn library will be uninstalled from your system.</p>
+<p>Please note:</p>
+<ul class="simple">
+<li><p>If your setup differs from the default paths mentioned, replace the &lt;path/to/&gt; part with the actual directory paths.</p></li>
+<li><p>Always double-check before running these commands to prevent the removal of unintended files.</p></li>
+<li><p>Make sure you have sudo privileges to perform these operations.
+Be aware that these steps only remove the CUDAnn library files. Therefore, if you have installed other software that depends on this library, double-check as they might not work properly after the removal.</p></li>
+</ul>
+<br>
 </section>
 </section>
 <section id="nvidia-com-links">
@@ -501,7 +615,14 @@ document.write(`
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN Driver Archive</a></p></td>
+<td><p>Comprehensive archive of latest and archived versions of NVIDIA cuDNN library.</p></td>
+</tr>
+</tbody>
 </table>
+<br>
+<br>
 </section>
 </section>
 
@@ -524,6 +645,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">CUDA &#64; WSL2 Ubuntu</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../bashrc/bashrc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">.bashrc</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -548,6 +678,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-extracted-files-to-the-cuda-include-directory">3. Copy the extracted  files to the CUDA include directory:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-files-to-the-cuda-lib64-directory">4. Copy the files to the CUDA lib64 directory:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-the-permission">5. Modify the permission:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-cuda-library-links">Updating CUDA Library Links</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-powershell-as-admin">1. Open Powershell <em>as admin</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-directory">2. Change directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-existing-files">3. Delete existing files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-symlinks">3. Create Symlinks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restart-ws">4. Restart WS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-cudnn-to-system-paths">5. Adding cuDNN to System Paths</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uninstall-update-cudnn">Uninstall / Update cuDNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-files-to-be-removed">1. Identify the Files to be Removed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-cudann-library-files">2. Remove CUDAnn Library Files</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-com-links">NVIDIA.com Links</a></li>

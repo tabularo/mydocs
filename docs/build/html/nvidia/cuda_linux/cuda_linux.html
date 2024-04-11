@@ -174,13 +174,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../wsl2_windows/index.html">WSL2 @ Windows</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../anaconda/anaconda_ubuntu_installation.html">Anaconda@Ubuntu Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anaconda/installation_ubuntu.html">Installation @Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../anaconda/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">NVIDIA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA @ Windows</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">CUDA @ WSL2 Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cudnn_linux/cudnn_linux.html">cuDNN @ WSL2 Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bashrc/bashrc.html">.bashrc</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tensorflow/index.html">TensorFlow</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tensorflow/tensorrt.html">TensorRT</a></li>
 </ul>
 </li>
 </ul>
@@ -404,12 +410,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-your-repository-information">6. Update your repository information:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-cuda-to-system-paths">Adding CUDA to System Paths</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-bashrc">Step 1: Open .bashrc</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-insert-conda-configuration">Step 2: Insert Conda Configuration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-save-and-exit-nano">Step 3: Save and Exit Nano</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-cuda-to-system-paths">Adding CUDA to System Paths</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-cuda-version">Verify CUDA version</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-the-cuda-toolkit">Removing the CUDA Toolkit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-com-links">NVIDIA.com Links</a></li>
@@ -439,7 +440,7 @@ document.write(`
 <section id="download-the-cuda-repository-package">
 <h3>1. Download the CUDA repository package:<a class="headerlink" href="#download-the-cuda-repository-package" title="Permalink to this heading">#</a></h3>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>wget<span class="w"> </span>https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
 </pre></div>
 </div>
@@ -448,7 +449,7 @@ document.write(`
 <section id="move-the-downloaded-file-to-etc-apt-preferences-d-directory">
 <h3>2. Move the downloaded file to /etc/apt/preferences.d/ directory<a class="headerlink" href="#move-the-downloaded-file-to-etc-apt-preferences-d-directory" title="Permalink to this heading">#</a></h3>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>sudo<span class="w"> </span>mv<span class="w"> </span>cuda-wsl-ubuntu.pin<span class="w"> </span>/etc/apt/preferences.d/cuda-repository-pin-600<span class="w"> </span>
 </pre></div>
 </div>
@@ -457,7 +458,7 @@ document.write(`
 <section id="download-cuda-11-8-installation-package">
 <h3>3. Download CUDA 11.8 installation package:<a class="headerlink" href="#download-cuda-11-8-installation-package" title="Permalink to this heading">#</a></h3>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>wget<span class="w"> </span>https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-wsl-ubuntu-11-8-local_11.8.0-1_amd64.deb<span class="w"> </span>
 </pre></div>
 </div>
@@ -466,7 +467,7 @@ document.write(`
 <section id="install-the-downloaded-cuda-package">
 <h3>4. Install the downloaded CUDA package:<a class="headerlink" href="#install-the-downloaded-cuda-package" title="Permalink to this heading">#</a></h3>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>cuda-repo-wsl-ubuntu-11-8-local_11.8.0-1_amd64.deb<span class="w"> </span>
 </pre></div>
 </div>
@@ -475,7 +476,7 @@ document.write(`
 <section id="copy-the-keyring-file-to-the-appropriate-directory">
 <h3>5. Copy the keyring file to the appropriate directory:<a class="headerlink" href="#copy-the-keyring-file-to-the-appropriate-directory" title="Permalink to this heading">#</a></h3>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>sudo<span class="w"> </span>cp<span class="w"> </span>/var/cuda-repo-wsll-ubuntu-11-8-local/cuda-*-keyring.gpg<span class="w"> </span>/usr/share/keyrings/<span class="w">    </span>
 </pre></div>
 </div>
@@ -484,7 +485,7 @@ document.write(`
 <section id="update-your-repository-information">
 <h3>6. Update your repository information:<a class="headerlink" href="#update-your-repository-information" title="Permalink to this heading">#</a></h3>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w">  </span>
 </pre></div>
 </div>
@@ -494,46 +495,15 @@ document.write(`
 </section>
 <section id="adding-cuda-to-system-paths">
 <h2>Adding CUDA to System Paths<a class="headerlink" href="#adding-cuda-to-system-paths" title="Permalink to this heading">#</a></h2>
-<section id="step-1-open-bashrc">
-<h3>Step 1: Open .bashrc<a class="headerlink" href="#step-1-open-bashrc" title="Permalink to this heading">#</a></h3>
-<p>Open the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file in your home directory using a text editor. In this case, Nano is used.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id7" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>nano<span class="w"> </span>~/.bashrc
-</pre></div>
-</div>
-</div>
-</section>
-<section id="step-2-insert-conda-configuration">
-<h3>Step 2: Insert Conda Configuration<a class="headerlink" href="#step-2-insert-conda-configuration" title="Permalink to this heading">#</a></h3>
-<p>At the end of the file, insert the following Conda configuration:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=/usr/local/cuda-12.2/bin${PATH:+:${PATH}}&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</pre></div>
-</div>
-</div>
-<p>By adding these lines to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file, you ensure that every time a new bash session starts</p>
-</section>
-<section id="step-3-save-and-exit-nano">
-<h3>Step 3: Save and Exit Nano<a class="headerlink" href="#step-3-save-and-exit-nano" title="Permalink to this heading">#</a></h3>
-<p>While in Nano editor, you can save your changes and exit by using the following shortcuts:</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id9" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="sb">`</span>Ctrl<span class="w"> </span>+<span class="w"> </span>O<span class="sb">`</span><span class="w">           </span><span class="c1"># to save the file.</span>
-<span class="w">   </span>
-<span class="w">   </span><span class="sb">`</span>Ctrl<span class="w"> </span>+<span class="w"> </span>X<span class="sb">`</span><span class="w">           </span><span class="c1"># to exit the nano editor.</span>
-</pre></div>
-</div>
-</div>
-</section>
+<blockquote>
+<div><p>see <a class="reference internal" href="../bashrc/bashrc.html"><span class="doc std std-doc">.bashrc configurations &gt; adding CUDA to system path</span></a></p>
+</div></blockquote>
 </section>
 <section id="verify-cuda-version">
 <h2>Verify CUDA version<a class="headerlink" href="#verify-cuda-version" title="Permalink to this heading">#</a></h2>
 <p>After installing your CUDA version, verify the installation using the following command:</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id10" title="Permalink to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id7" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>nvcc<span class="w"> </span>--version<span class="w">    </span>
 </pre></div>
 </div>
@@ -542,8 +512,8 @@ document.write(`
 <section id="removing-the-cuda-toolkit">
 <h2>Removing the CUDA Toolkit<a class="headerlink" href="#removing-the-cuda-toolkit" title="Permalink to this heading">#</a></h2>
 <p>If you need to uninstall the CUDA Toolkit, refer to the official <a class="reference external" href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#removing-cuda-toolkit-and-driver">CUDA Documentation</a> for instructions. Here’s the main command to do so:</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Terminal</span><a class="headerlink" href="#id11" title="Permalink to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>--purge<span class="w"> </span>remove<span class="w"> </span><span class="s2">&quot;*cuda*&quot;</span><span class="w"> </span><span class="s2">&quot;*cublas*&quot;</span><span class="w"> </span><span class="s2">&quot;*cufft*&quot;</span><span class="w"> </span><span class="s2">&quot;*cufile*&quot;</span><span class="w"> </span><span class="s2">&quot;*curand*&quot;</span><span class="w"> </span><span class="s2">&quot;*cusolver*&quot;</span><span class="w"> </span><span class="s2">&quot;*cusparse*&quot;</span><span class="w"> </span><span class="s2">&quot;*npp*&quot;</span><span class="w"> </span><span class="s2">&quot;*nvjpeg*&quot;</span><span class="w"> </span><span class="s2">&quot;*nvvm*&quot;</span>
 </pre></div>
 </div>
@@ -624,12 +594,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-your-repository-information">6. Update your repository information:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-cuda-to-system-paths">Adding CUDA to System Paths</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-bashrc">Step 1: Open .bashrc</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-insert-conda-configuration">Step 2: Insert Conda Configuration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-save-and-exit-nano">Step 3: Save and Exit Nano</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-cuda-to-system-paths">Adding CUDA to System Paths</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-cuda-version">Verify CUDA version</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-the-cuda-toolkit">Removing the CUDA Toolkit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-com-links">NVIDIA.com Links</a></li>

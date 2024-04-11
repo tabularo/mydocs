@@ -13,10 +13,11 @@
 <br>
 
 ## Post-Installation Setup
-| Command | Description |
-|---------|-------------|
-| `sudo apt update` | Update the APT package index files from their sources |
-| `lsb_release -a` | Show the installed Linux distribution version |
+| Command            | Description |
+|--------------------|-------------|
+| `sudo apt update`  | Update the APT package index files from their sources |
+| `sudo apt upgrade` | Update the APT package index files from their sources |
+| `lsb_release -a`   | Show the installed Linux distribution version |
 
 <br>
 

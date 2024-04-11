@@ -11,5 +11,6 @@ This chapter is about installing and working with the Anaconda Environment on Ub
 
 ```{toctree}
 cheetsheet_conda
-anaconda_ubuntu_installation
+installation_ubuntu
+bashrc
 ```

@@ -1,4 +1,4 @@
-# Anaconda@Ubuntu Installation
+# Installation @Ubuntu
 
 ## Download Installer
    | Description                    | Link |

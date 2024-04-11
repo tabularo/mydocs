@@ -1,11 +1,18 @@
 # NVIDIA @ Windows
 
+:::{warning}
+**TensorFlow with GPU support for WSL2 on Windows**
+
+Install NVIDIA Driver **only** on Windows (Host) not on WSL2 (Guest)!
+
+:::
+
 This documentation is designed to serve as a helpful resource for users navigating the installation, maintenance, and operation of a TensorFlow environment. While it may not cover every aspect comprehensively, its goal is to provide assistance where needed.
 
 Specifically, this documentation aims to address important details concerning the integration of NVIDIA and CUDA drivers with TensorFlow. These are challenges that I have personally encountered and observed others facing, hence their inclusion in this guide.
 
-NVIDIA Installer
----
+## NVIDIA Installer
+
 
 ![image](images/nvidia_installer.png)
 

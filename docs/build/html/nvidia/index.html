@@ -48,11 +48,13 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'nvidia/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="NVIDIA @ Windows" href="nvidia_windows_driver/nvidia_windows_driver.html" />
-    <link rel="prev" title="Anaconda@Ubuntu Installation" href="../anaconda/anaconda_ubuntu_installation.html" />
+    <link rel="prev" title=".bashrc" href="../anaconda/bashrc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,13 +176,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../wsl2_windows/index.html">WSL2 @ Windows</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anaconda/anaconda_ubuntu_installation.html">Anaconda@Ubuntu Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anaconda/installation_ubuntu.html">Installation @Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anaconda/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">NVIDIA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA @ Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html">CUDA @ WSL2 Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cudnn_linux/cudnn_linux.html">cuDNN @ WSL2 Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bashrc/bashrc.html">.bashrc</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tensorflow/index.html">TensorFlow</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tensorflow/tensorrt.html">TensorRT</a></li>
 </ul>
 </li>
 </ul>
@@ -372,7 +380,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -388,6 +398,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-gpu-support">TensorFlow GPU support</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-options">Install options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-tasks">Installation Tasks</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -399,7 +419,46 @@ document.write(`
                   
   <section id="nvidia">
 <h1>NVIDIA<a class="headerlink" href="#nvidia" title="Permalink to this heading">#</a></h1>
-<p>This chapter is about installing NVIDIA Drivers, CUDA on Linux and some notes about tensorflow[and-cuda] package.</p>
+<section id="tensorflow-gpu-support">
+<h2>TensorFlow GPU support<a class="headerlink" href="#tensorflow-gpu-support" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This chapter is about using TensorFlow with GPU support on a Windows workstation. Since TensorFlow no longer supports GPU on native Windows, you will need to install TensorFlow on WSL2.  Therefore you need to install NVIDIA Drivers on your Windows host, CUDA Toolbox and cuDNN Library local on your WSL2 host with Linux or the tensorflow[and-cuda] package including CUDA and cuDNN in additional pip packages on WSL2.</p>
+</div>
+<br>
+</section>
+<section id="install-options">
+<h2>Install options<a class="headerlink" href="#install-options" title="Permalink to this heading">#</a></h2>
+<br>
+<div class="mermaid">
+            graph TB;
+    classDef red fill:#f96,stroke:#AAA,stroke-width:0.5px;
+    classDef green fill:#90EE90,stroke:#AAA,stroke-width:0.5px;
+
+    subgraph &quot;    Host    &quot;
+        A[Host: Windows] 
+        A --&gt; B[NVIDIA Driver];
+    end
+
+    subgraph &quot;Option 1        &quot;
+        B --&gt; C[Guest: WSL2];
+        C --&gt; D[CUDA Toolkit + cuDNN Libraries];
+        D --&gt; E[&quot;TensorFlow package&quot;];
+    end
+
+    subgraph &quot;Option 2        &quot;
+        B --&gt; F[Guest: WSL2];
+        F --&gt; G[&quot;TensorFlow[and-cuda] package&quot;];
+    end
+
+    class B,D red;
+    class A,C,F green;
+        </div><br>
+<br>
+</section>
+<section id="installation-tasks">
+<h2>Installation Tasks<a class="headerlink" href="#installation-tasks" title="Permalink to this heading">#</a></h2>
+<br>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Installation Tasks</p></th>
@@ -410,14 +469,19 @@ document.write(`
 <tr class="row-even"><td><p>Install NVIDIA Drivers</p></td>
 <td><p>Windows</p></td>
 </tr>
-<tr class="row-odd"><td><p>Install CUDA</p></td>
+<tr class="row-odd"><td><p>Install CUDA / cuDNN</p></td>
 <td><p>Linux</p></td>
 </tr>
 <tr class="row-even"><td><p>Info TensorFlow with CUDA package</p></td>
 <td><p>Python</p></td>
 </tr>
+<tr class="row-odd"><td><p>Config .bashrc</p></td>
+<td><p>Linux</p></td>
+</tr>
 </tbody>
 </table>
+<br>
+<br>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA &#64; Windows</a><ul>
@@ -436,12 +500,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#update-your-repository-information">6. Update your repository information:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#adding-cuda-to-system-paths">Adding CUDA to System Paths</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#step-1-open-bashrc">Step 1: Open .bashrc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#step-2-insert-conda-configuration">Step 2: Insert Conda Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cuda_linux/cuda_linux.html#step-3-save-and-exit-nano">Step 3: Save and Exit Nano</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#adding-cuda-to-system-paths">Adding CUDA to System Paths</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#verify-cuda-version">Verify CUDA version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#removing-the-cuda-toolkit">Removing the CUDA Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cuda_linux/cuda_linux.html#nvidia-com-links">NVIDIA.com Links</a></li>
@@ -457,11 +516,39 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#modify-the-permission">5. Modify the permission:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#updating-cuda-library-links">Updating CUDA Library Links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#open-powershell-as-admin">1. Open Powershell <em>as admin</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#change-directory">2. Change directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#delete-existing-files">3. Delete existing files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#create-symlinks">3. Create Symlinks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#restart-ws">4. Restart WS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#adding-cudnn-to-system-paths">5. Adding cuDNN to System Paths</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#uninstall-update-cudnn">Uninstall / Update cuDNN</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#identify-the-files-to-be-removed">1. Identify the Files to be Removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#remove-cudann-library-files">2. Remove CUDAnn Library Files</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="cudnn_linux/cudnn_linux.html#nvidia-com-links">NVIDIA.com Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bashrc/bashrc.html">.bashrc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bashrc/bashrc.html#editing-bashrc">Editing .bashrc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bashrc/bashrc.html#step-1-open-bashrc">Step 1: Open .bashrc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bashrc/bashrc.html#step-2-save-and-exit-nano">Step 2: Save and Exit Nano</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bashrc/bashrc.html#bashrc-configurations">.bashrc Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bashrc/bashrc.html#adding-cuda-to-system-paths">Adding CUDA to System Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bashrc/bashrc.html#adding-cudnn-to-system-paths">Adding cuDNN to System Paths</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
+</section>
 </section>
 
 
@@ -476,12 +563,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../anaconda/anaconda_ubuntu_installation.html"
+       href="../anaconda/bashrc.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Anaconda&#64;Ubuntu Installation</p>
+        <p class="prev-next-title">.bashrc</p>
       </div>
     </a>
     <a class="right-next"
@@ -500,7 +587,22 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-gpu-support">TensorFlow GPU support</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-options">Install options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-tasks">Installation Tasks</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
