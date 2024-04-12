@@ -87,4 +87,5 @@ graph LR
 ```{toctree}
 tensorflow
 tensorrt
+pythonpattern
 ```

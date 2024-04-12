@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TensorRT &#8212; mydocs</title>
+    <title>Jupyter Setup Blocks &#8212; mydocs</title>
   
   
   
@@ -48,13 +48,10 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tensorflow/tensorrt';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tensorflow/pythonpattern';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Jupyter Setup Blocks" href="pythonpattern.html" />
-    <link rel="prev" title="TensorFlow" href="tensorflow.html" />
+    <link rel="prev" title="TensorRT" href="tensorrt.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,8 +186,8 @@
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">TensorFlow GPU</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tensorflow.html">TensorFlow</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">TensorRT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pythonpattern.html">Jupyter Setup Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensorrt.html">TensorRT</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Jupyter Setup Blocks</a></li>
 </ul>
 </li>
 </ul>
@@ -264,7 +261,7 @@
       
       
       
-      <li><a href="https://github.com/tabularo/mydocs/edit/main/tensorflow/tensorrt.md" target="_blank"
+      <li><a href="https://github.com/tabularo/mydocs/edit/main/tensorflow/pythonpattern.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/tabularo/mydocs/issues/new?title=Issue%20on%20page%20%2Ftensorflow/tensorrt.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/tabularo/mydocs/issues/new?title=Issue%20on%20page%20%2Ftensorflow/pythonpattern.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +308,7 @@
       
       
       
-      <li><a href="../_sources/tensorflow/tensorrt.md" target="_blank"
+      <li><a href="../_sources/tensorflow/pythonpattern.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TensorRT</h1>
+    <h1>Jupyter Setup Blocks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,17 +402,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-installation-dependency-chart">Software Installation Dependency Chart</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages-installation">Packages installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools">1. setuptools</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-pyindex">2. nvidia-pyindex</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-tensorrt">3. nvidia-tensorrt</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-installation">Verify installation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-python-and-tensorflow-configuration">Checking Python and TensorFlow Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-version-and-path">CUDA version and path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-cuda-path-in-environment">Setting CUDA path in environment</a></li>
 </ul>
             </nav>
         </div>
@@ -427,63 +417,134 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="tensorrt">
-<h1>TensorRT<a class="headerlink" href="#tensorrt" title="Permalink to this heading">#</a></h1>
-<section id="install">
-<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h2>
-<section id="software-installation-dependency-chart">
-<h3>Software Installation Dependency Chart<a class="headerlink" href="#software-installation-dependency-chart" title="Permalink to this heading">#</a></h3>
-<div class="mermaid">
-            graph LR
-    A(TensorFlow) --&gt; B(setuptools) 
-    subgraph TensorFlowRT
-        B(setuptools) --&gt; C(nvidia-pyindex) 
-        C --&gt; D(nvidia-tensorrt)
-    end
-    style A fill:#808080,stroke:#333,stroke-width:1px,color:#fff;
-        </div></section>
-<section id="packages-installation">
-<h3>Packages installation<a class="headerlink" href="#packages-installation" title="Permalink to this heading">#</a></h3>
-<section id="setuptools">
-<h4>1. setuptools<a class="headerlink" href="#setuptools" title="Permalink to this heading">#</a></h4>
-<p>Update setuptools, to assure <code class="docutils literal notranslate"><span class="pre">nvidia-pyindex</span></code> installation. Run the following command in your terminal:</p>
+  <section id="jupyter-setup-blocks">
+<h1>Jupyter Setup Blocks<a class="headerlink" href="#jupyter-setup-blocks" title="Permalink to this heading">#</a></h1>
+<section id="import-libraries">
+<h2>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this heading">#</a></h2>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>setuptools<span class="w"> </span>pip
-</pre></div>
+<div class="code-block-caption"><span class="caption-text">import libraries</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos">2</span><span class="kn">import</span> <span class="nn">tensorrt</span> <span class="k">as</span> <span class="nn">trt</span>
+<span class="hll"><span class="linenos">3</span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+</span></pre></div>
 </div>
 </div>
+<p>Output:</p>
+<p style="color: red;">
+2024-04-12 07:06:13.429787: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.<br/>
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+</p>
+<hr class="docutils" />
+<p>Responsible for the out put is line 3.</p>
+<p>The TensorFlow informational message (even though it’s displayed in red) is neither an error nor a warning, but simply informational. The red output might seem alarming, but it’s just TensorFlow’s way of sharing significant system information. The message states that the TensorFlow binary you’re using has been optimized to leverage specific CPU instructions in performance-driven operations. However, certain available CPU instructions - namely AVX2, AVX512F, AVX512_VNNI, AVX512_BF16, and FMA - aren’t being utilized in other operations. If you wish to utilize these for potential performance enhancements, you would need to rebuild TensorFlow from the source with the appropriate compiler flags. It’s crucial to remember, though, that while these specific instruction sets can add considerable value, rebuilding TensorFlow to include them may result in only slight performance improvements for most users.</p>
+<br>
 </section>
-<section id="nvidia-pyindex">
-<h4>2. nvidia-pyindex<a class="headerlink" href="#nvidia-pyindex" title="Permalink to this heading">#</a></h4>
-<p>Install nvidia-pyindex. Run the following command in your terminal:</p>
+<section id="checking-python-and-tensorflow-configuration">
+<h2>Checking Python and TensorFlow Configuration<a class="headerlink" href="#checking-python-and-tensorflow-configuration" title="Permalink to this heading">#</a></h2>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nvidia-pyindex
+<div class="code-block-caption"><span class="caption-text">import libraries</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python Interpreter&quot;</span><span class="p">)</span>
+<span class="linenos"> 3</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==================&quot;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python version&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python Packages&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===============&quot;</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tensorflowRT Version: &#39;</span><span class="p">,</span> <span class="n">trt</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TensorFlow version:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="hll"><span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CUDA is available: &quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">is_built_with_cuda</span><span class="p">())</span>
+</span><span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CUDA version:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">sysconfig</span><span class="o">.</span><span class="n">get_build_info</span><span class="p">()[</span><span class="s2">&quot;cuda_version&quot;</span><span class="p">])</span>
+<span class="linenos">13</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cuDNN version:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">sysconfig</span><span class="o">.</span><span class="n">get_build_info</span><span class="p">()[</span><span class="s2">&quot;cudnn_version&quot;</span><span class="p">])</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GPU Support&quot;</span><span class="p">)</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===========&quot;</span><span class="p">)</span>
+<span class="hll"><span class="linenos">18</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Is GPU available:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">))</span>
+</span></pre></div>
+</div>
+</div>
+<p>Output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python Interpreter  
+==================  
+Python version 3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]  
+
+
+Python Packages  
+===============
+tensorflowRT Version:  8.6.1  
+TensorFlow version: 2.13.0  
+CUDA is available:  True  
+CUDA version: 11.8  
+cuDNN version: 8  
+
+
+GPU Support  
+===========
+Is GPU available: [PhysicalDevice(name=&#39;/physical_device:GPU:0&#39;, device_type=&#39;GPU&#39;)]  
 </pre></div>
 </div>
-</div>
+<p style="color: red;">
+2024-04-12 07:19:51.782689: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support. <br>
+2024-04-12 07:19:51.864908: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support. <br>
+2024-04-12 07:19:51.865059: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support. <br>
+</p>
+<hr class="docutils" />
+<p>Responsible for the output are lines 11, 18.</p>
+<p>The output in red might appear alarming; however, this message is neither a warning nor an error. In fact, it’s an informational message produced by TensorFlow, as indicated by the leading ‘I’.</p>
+<p>It indicates that TensorFlow tried to check for Non-Uniform Memory Access (NUMA) support by looking at the numa_node file for your GPU device and could not find it. This suggests that your Linux kernel may not have been built with support for NUMA.</p>
+<p>However, lack of NUMA support is not typically an issue for most TensorFlow workflows unless you are working in a high performance computing environment with very specific requirements. Your TensorFlow operations should still work as expected.</p>
+<br>
 </section>
-<section id="nvidia-tensorrt">
-<h4>3. nvidia-tensorrt<a class="headerlink" href="#nvidia-tensorrt" title="Permalink to this heading">#</a></h4>
-<p>Upgrade nvidia-tensorrt. This will also pull CUDA libraries and cuDNN because of dependencies. Run the following command in your terminal:</p>
+<section id="cuda-version-and-path">
+<h2>CUDA version and path<a class="headerlink" href="#cuda-version-and-path" title="Permalink to this heading">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>When querying the CUDA version within a Python environment, the result might not always be what you expect. The version returned could be that of the CUDA toolkit installed on the system, or it could be tied to a specific Python package like PyCUDA or TensorFlow. The reported version could also depend on your PATH and environment variables. Therefore, be mindful about which CUDA version is being referred to in different contexts within Python.</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nvidia-tensorrt
+<div class="code-block-caption"><span class="caption-text">Get CUDA version and path</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+
+
+<span class="k">def</span> <span class="nf">get_cuda_version_and_path</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">nvcc_path</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;which&#39;</span><span class="p">,</span> <span class="s1">&#39;nvcc&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s2">&quot;nvcc&quot;</span><span class="p">,</span> <span class="s2">&quot;--version&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">version_line</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;release&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="n">version_line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;release &quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">version</span><span class="p">,</span> <span class="n">nvcc_path</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not retrieve CUDA version or path: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="n">version</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">get_cuda_version_and_path</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CUDA version: </span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NVCC path: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<p>Output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CUDA version: 11.5  
+NVCC path: /usr/bin/nvcc
+</pre></div>
+</div>
+<br>
 </section>
-</section>
-<section id="verify-installation">
-<h3>Verify installation<a class="headerlink" href="#verify-installation" title="Permalink to this heading">#</a></h3>
+<section id="setting-cuda-path-in-environment">
+<h2>Setting CUDA path in environment<a class="headerlink" href="#setting-cuda-path-in-environment" title="Permalink to this heading">#</a></h2>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Terminal (WSL2 guest)</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import tensorrt; print(&#39;TensorRT version:&#39;, tensorrt.__version__); assert tensorrt.Builder(tensorrt.Logger()); print(&#39;TensorRT Builder was successfully initialized&#39;)&quot;</span>
+<div class="code-block-caption"><span class="caption-text">Change CUDA path</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+ <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/usr/local/cuda/bin:&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-</section>
 </section>
 </section>
 
@@ -499,22 +560,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tensorflow.html"
+       href="tensorrt.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TensorFlow</p>
+        <p class="prev-next-title">TensorRT</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="pythonpattern.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Jupyter Setup Blocks</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -532,17 +584,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-installation-dependency-chart">Software Installation Dependency Chart</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages-installation">Packages installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setuptools">1. setuptools</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-pyindex">2. nvidia-pyindex</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-tensorrt">3. nvidia-tensorrt</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-installation">Verify installation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-python-and-tensorflow-configuration">Checking Python and TensorFlow Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-version-and-path">CUDA version and path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-cuda-path-in-environment">Setting CUDA path in environment</a></li>
 </ul>
   </nav></div>
 
