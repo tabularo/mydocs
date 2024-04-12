@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>TensorFlow &#8212; mydocs</title>
+    <title>TensorFlow GPU &#8212; mydocs</title>
   
   
   
@@ -187,7 +187,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../nvidia/bashrc/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">TensorFlow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">TensorFlow GPU</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="tensorflow.html">TensorFlow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tensorrt.html">TensorRT</a></li>
 </ul>
@@ -394,7 +394,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TensorFlow</h1>
+    <h1>TensorFlow GPU</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,6 +404,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-on-windows-via-wsl2">Installation on Windows via WSL2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-options">Install options</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-installation-dependency-chart">Software Installation Dependency Chart</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-content">Table of content</a></li>
 </ul>
@@ -417,9 +419,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="tensorflow">
-<h1>TensorFlow<a class="headerlink" href="#tensorflow" title="Permalink to this heading">#</a></h1>
+  <section id="tensorflow-gpu">
+<h1>TensorFlow GPU<a class="headerlink" href="#tensorflow-gpu" title="Permalink to this heading">#</a></h1>
 <p>This chapter is about installing <strong>TensorFlow</strong> with and without CUDA packages as well as <strong>TensorRT</strong>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>TensorFlow 2.10 was the last TensorFlow release that supported GPU on native-Windows. Starting with TensorFlow 2.11, you will need to install TensorFlow in WSL2.</p>
+</div>
+<section id="installation-on-windows-via-wsl2">
+<h2>Installation on Windows via WSL2<a class="headerlink" href="#installation-on-windows-via-wsl2" title="Permalink to this heading">#</a></h2>
+<p>Installing TensorFlow within WSL2 is an efficient approach as it allows you to leverage the performance benefits of the Linux kernel while working in a Windows environment. The setup process includes installing a Linux distribution on Windows using WSL2, configuring a Python environment, preferably using Anaconda, and then installing TensorFlow into this environment.</p>
+<div class="mermaid">
+            graph TB;
+    classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+    subgraph &quot;Windows_host&quot;
+        subgraph &quot;WSL2_guest&quot;
+            A[Anaconda]
+        end
+    end
+    class WSL2_guest green
+        </div><br>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">with</span> <span class="pre">GPU</span> <span class="pre">support</span></code> can be a nightmare - <strong>expect challenges</strong>.</p>
@@ -428,6 +447,34 @@ document.write(`
 <p>see also, <a class="reference external" href="http://localhost:63342/mydocs/docs/build/html/nvidia/cuda_linux/cuda_linux.html">CUDA Installation</a></p>
 </div>
 <br>
+</section>
+<section id="install-options">
+<h2>Install options<a class="headerlink" href="#install-options" title="Permalink to this heading">#</a></h2>
+<div class="mermaid">
+            graph TB;
+    classDef red fill:#f96,stroke:#AAA,stroke-width:0.5px;
+    classDef green fill:#90EE90,stroke:#AAA,stroke-width:0.5px;
+
+    subgraph &quot;    Host    &quot;
+        A[Host: Windows] 
+        A --&gt; B[NVIDIA Driver];
+    end
+
+    subgraph &quot;Option 1        &quot;
+        B --&gt; C[Guest: WSL2];
+        C --&gt; D[CUDA Toolkit + cuDNN Libraries];
+        D --&gt; E[&quot;TensorFlow package&quot;];
+    end
+
+    subgraph &quot;Option 2        &quot;
+        B --&gt; F[Guest: WSL2];
+        F --&gt; G[&quot;TensorFlow[and-cuda] package&quot;];
+    end
+
+    class B,D red;
+    class A,C,F green;
+        </div><br>
+</section>
 <section id="software-installation-dependency-chart">
 <h2>Software Installation Dependency Chart<a class="headerlink" href="#software-installation-dependency-chart" title="Permalink to this heading">#</a></h2>
 <div class="mermaid">
@@ -523,6 +570,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-on-windows-via-wsl2">Installation on Windows via WSL2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-options">Install options</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-installation-dependency-chart">Software Installation Dependency Chart</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-content">Table of content</a></li>
 </ul>

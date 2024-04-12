@@ -23,7 +23,7 @@ Installation is straightforward
 
 ### Prerequisites
 
-No prerequisites, except installing NVIDIA Graphics driver on your windows machine, do nothing ;-)
+In this documentation called "option 2", no prerequisites, except installing NVIDIA Graphics driver on your windows machine, do nothing ;-)
 
 ### Installation
 
