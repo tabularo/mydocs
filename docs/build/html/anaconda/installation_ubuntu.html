@@ -495,6 +495,10 @@ document.write(`
 </section>
 <section id="post-installation-steps">
 <h2>Post-Installation Steps<a class="headerlink" href="#post-installation-steps" title="Permalink to this heading">#</a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To maintain a clean setup, clone the base environment right after installation and create a separate environment, <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">&lt;myenv&gt;</span> <span class="pre">--clone</span> <span class="pre">base</span></code>. This practice helps to avoid any modifications or conflicts in the <em>base</em> environment. To make it foolproof, adjust your .bashrc configuration as described in the steps below.</p>
+</div>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -508,7 +512,7 @@ document.write(`
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code></p></td>
 <td><p>Update Conda to the latest version</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">myenv</span> <span class="pre">--clone</span> <span class="pre">base</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">&lt;myenv&gt;</span> <span class="pre">--clone</span> <span class="pre">base</span></code></p></td>
 <td><p>Clone the base environment</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code></p></td>
@@ -545,7 +549,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<p>By adding these lines to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file, you ensure that every time a new bash session starts, it will initialize Conda and activate the <code class="docutils literal notranslate"><span class="pre">baseclone</span></code> environment.</p>
+<p>By adding these lines to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file, you ensure that every time a new bash session starts, it will initialize Conda and activate the <code class="docutils literal notranslate"><span class="pre">&lt;myenv&gt;</span></code> environment.</p>
 </section>
 <section id="step-3-save-and-exit-nano">
 <h3>Step 3: Save and Exit Nano<a class="headerlink" href="#step-3-save-and-exit-nano" title="Permalink to this heading">#</a></h3>

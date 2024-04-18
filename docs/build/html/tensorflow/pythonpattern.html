@@ -505,6 +505,10 @@ Your kernel may have been built without NUMA support. <br>
 <p class="admonition-title">Attention</p>
 <p>When querying the CUDA version within a Python environment, the result might not always be what you expect. The version returned could be that of the CUDA toolkit installed on the system, or it could be tied to a specific Python package like PyCUDA or TensorFlow. The reported version could also depend on your PATH and environment variables. Therefore, be mindful about which CUDA version is being referred to in different contexts within Python.</p>
 </div>
+<div class="margin admonition">
+<p class="admonition-title">Reminder</p>
+<p>To be honest, currently I’ve no idea why CUDA is available at <code class="docutils literal notranslate"><span class="pre">/usr/bin/nvcc</span></code> on my system. But that’s why I’m writting that documentation. Have to check this with a new ubuntu installation, next time.</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Get CUDA version and path</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
@@ -544,6 +548,15 @@ NVCC path: /usr/bin/nvcc
  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/usr/local/cuda/bin:&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After setting the path to <code class="docutils literal notranslate"><span class="pre">/usr/local/cuda/bin:</span></code> you’ll get another output from the function <code class="docutils literal notranslate"><span class="pre">get_cuda_version_and_path</span></code>, see above.</p>
+</div>
+<p>Output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CUDA version: 12.2
+NVCC path: /usr/local/cuda/bin/nvcc
+</pre></div>
 </div>
 </section>
 </section>

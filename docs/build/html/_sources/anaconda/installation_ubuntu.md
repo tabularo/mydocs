@@ -31,12 +31,17 @@
 <br>
 
 ## Post-Installation Steps
-   | Command | Description |
-   |---------|-------------|
-   | `conda --version` | Check current Anaconda version |
-   | `conda update conda` | Update Conda to the latest version |
-   | `conda create --name myenv --clone base` | Clone the base environment |
-   | `conda list`  | Verify installation by showing a list of installed packages |
+
+:::{hint}
+To maintain a clean setup, clone the base environment right after installation and create a separate environment, `conda create --name <myenv> --clone base`. This practice helps to avoid any modifications or conflicts in the *base* environment. To make it foolproof, adjust your .bashrc configuration as described in the steps below.
+:::
+
+   | Command                                    | Description |
+   |--------------------------------------------|-------------|
+   | `conda --version`                          | Check current Anaconda version |
+   | `conda update conda`                       | Update Conda to the latest version |
+   | `conda create --name <myenv> --clone base` | Clone the base environment |
+   | `conda list`                               | Verify installation by showing a list of installed packages |
    
 Remember, you should restart the terminal after installing Anaconda. In some cases, changes might not take effect until the system is restarted.
 
@@ -67,7 +72,7 @@ At the end of the file, insert the following Conda configuration:
    conda activate baseclone
 ```
 
-By adding these lines to your `.bashrc` file, you ensure that every time a new bash session starts, it will initialize Conda and activate the `baseclone` environment.
+By adding these lines to your `.bashrc` file, you ensure that every time a new bash session starts, it will initialize Conda and activate the `<myenv>` environment.
 
 ### Step 3: Save and Exit Nano
 While in Nano editor, you can save your changes and exit by using the following shortcuts:

@@ -99,6 +99,10 @@ However, lack of NUMA support is not typically an issue for most TensorFlow work
 When querying the CUDA version within a Python environment, the result might not always be what you expect. The version returned could be that of the CUDA toolkit installed on the system, or it could be tied to a specific Python package like PyCUDA or TensorFlow. The reported version could also depend on your PATH and environment variables. Therefore, be mindful about which CUDA version is being referred to in different contexts within Python.
 ```
 
+ :::{admonition} Reminder
+    :class: margin
+    To be honest, currently I've no idea why CUDA is available at `/usr/bin/nvcc` on my system. But that's why I'm writting that documentation. Have to check this with a new ubuntu installation, next time.
+ :::
 
 ```{code-block} python
     :caption: Get CUDA version and path
@@ -137,4 +141,14 @@ import os
 
  os.environ['PATH'] = '/usr/local/cuda/bin:' + os.environ['PATH']
 ```
+
+:::{note}
+After setting the path to `/usr/local/cuda/bin:` you'll get another output from the function `get_cuda_version_and_path`, see above.
+
+:::
+
+Output:
+
+    CUDA version: 12.2
+    NVCC path: /usr/local/cuda/bin/nvcc
 
