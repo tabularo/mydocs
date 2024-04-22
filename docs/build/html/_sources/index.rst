@@ -36,6 +36,7 @@ Happy cooking!
    anaconda/index
    nvidia/index
    tensorflow/index
+   azure/index
 
 
 
