@@ -1,35 +1,23 @@
 # WSL2 @ Windows
 
-## Installation
-| Command | Description |
-|---------|-------------|
-| `wsl --list --online` | List available Linux distributions for WSL |
-| `wsl --install -d NAME` | Install a specific Linux distribution (replace NAME with the distribution name, e.g., 'Ubuntu-22.04') |
+This chapter is about installing and maintaining a **WSL2 guest** like `ubuntu 22.04` on a `Windows machine` which we will call **WSL2 host** in this documentation.
 
-
-> During the installation process, you might be prompted to set a new `user name` and `password` for the Linux distribution. 
-> After setup, you may also need to `reboot` your system to complete the installation.
-
-<br>
-
-## Post-Installation Setup
-| Command            | Description |
-|--------------------|-------------|
-| `sudo apt update`  | Update the APT package index files from their sources |
-| `sudo apt upgrade` | Update the APT package index files from their sources |
-| `lsb_release -a`   | Show the installed Linux distribution version |
+:::{mermaid}
+graph TB;
+    classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+    subgraph "WSL2_host"
+        Host[Win11]
+        subgraph "WSL2_guest"
+            Guest[ubuntu 22.04]
+        end
+    end
+    class Host,Guest green
+:::
 
 <br>
-
-## Maintenance and Verification
-| Command | Description |
-|---------|-------------|
-| `wsl --list --verbose` | List all running WSL virtual machines |
-
 <br>
 
-## Uninstallation
-Use the name of the distribution (NAME) similar to installation.
-| Command | Description |
-|---------|-------------|
-| `wsl --unregister NAME` | Uninstall a specific Linux distribution (replace NAME with the distribution name, e.g., 'Ubuntu-22.04') |
+```{toctree}
+installation/01_wsl_host
+installation/02_wsl_guest
+```

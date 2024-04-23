@@ -48,10 +48,12 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'wsl2_windows/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Anaconda" href="../anaconda/index.html" />
+    <link rel="next" title="WSL2 @ host" href="installation/01_wsl_host.html" />
     <link rel="prev" title="Lists and Tables" href="../sphinx/content_layout/list_table.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,28 +173,32 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">WSL2 @ Windows</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">WSL2 @ Windows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/01_wsl_host.html">WSL2 @ host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/02_wsl_guest.html">WSL2 @ guest</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anaconda/index.html">Anaconda</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../anaconda/cheetsheet_conda.html">MyConda Cheet Sheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../anaconda/installation_ubuntu.html">Installation @Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../anaconda/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../nvidia/index.html">NVIDIA</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nvidia/index.html">NVIDIA</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../nvidia/nvidia_windows_driver/nvidia_windows_driver.html">NVIDIA @ Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nvidia/cuda_linux/cuda_linux.html">CUDA @ WSL2 Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nvidia/cudnn_linux/cudnn_linux.html">cuDNN @ WSL2 Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nvidia/bashrc/bashrc.html">.bashrc</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tensorflow/index.html">TensorFlow GPU</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tensorflow/index.html">TensorFlow GPU</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tensorflow/tensorflow.html">TensorFlow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tensorflow/tensorrt.html">TensorRT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tensorflow/pythonpattern.html">Jupyter Setup Blocks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../azure/index.html">Azure</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../azure/config/index.html">Config</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../azure/index.html">Azure</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../azure/config/index.html">Config</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../azure/config/internal_admin_takeover.html">Internal Admin Takeover</a></li>
 </ul>
 </li>
@@ -387,9 +393,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -405,17 +409,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-installation-setup">Post-Installation Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-and-verification">Maintenance and Verification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uninstallation">Uninstallation</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -427,83 +420,33 @@ document.write(`
                   
   <section id="wsl2-windows">
 <h1>WSL2 &#64; Windows<a class="headerlink" href="#wsl2-windows" title="Permalink to this heading">#</a></h1>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--list</span> <span class="pre">--online</span></code></p></td>
-<td><p>List available Linux distributions for WSL</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span> <span class="pre">-d</span> <span class="pre">NAME</span></code></p></td>
-<td><p>Install a specific Linux distribution (replace NAME with the distribution name, e.g., ‘Ubuntu-22.04’)</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><p>During the installation process, you might be prompted to set a new <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> for the Linux distribution.
-After setup, you may also need to <code class="docutils literal notranslate"><span class="pre">reboot</span></code> your system to complete the installation.</p>
-</div></blockquote>
+<p>This chapter is about installing and maintaining a <strong>WSL2 guest</strong> like <code class="docutils literal notranslate"><span class="pre">ubuntu</span> <span class="pre">22.04</span></code> on a <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">machine</span></code> which we will call <strong>WSL2 host</strong> in this documentation.</p>
+<div class="mermaid">
+            graph TB;
+    classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+    subgraph &quot;WSL2_host&quot;
+        Host[Win11]
+        subgraph &quot;WSL2_guest&quot;
+            Guest[ubuntu 22.04]
+        end
+    end
+    class Host,Guest green
+        </div><br>
 <br>
-</section>
-<section id="post-installation-setup">
-<h2>Post-Installation Setup<a class="headerlink" href="#post-installation-setup" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code></p></td>
-<td><p>Update the APT package index files from their sources</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span></code></p></td>
-<td><p>Update the APT package index files from their sources</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lsb_release</span> <span class="pre">-a</span></code></p></td>
-<td><p>Show the installed Linux distribution version</p></td>
-</tr>
-</tbody>
-</table>
-<br>
-</section>
-<section id="maintenance-and-verification">
-<h2>Maintenance and Verification<a class="headerlink" href="#maintenance-and-verification" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--list</span> <span class="pre">--verbose</span></code></p></td>
-<td><p>List all running WSL virtual machines</p></td>
-</tr>
-</tbody>
-</table>
-<br>
-</section>
-<section id="uninstallation">
-<h2>Uninstallation<a class="headerlink" href="#uninstallation" title="Permalink to this heading">#</a></h2>
-<p>Use the name of the distribution (NAME) similar to installation.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Command</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--unregister</span> <span class="pre">NAME</span></code></p></td>
-<td><p>Uninstall a specific Linux distribution (replace NAME with the distribution name, e.g., ‘Ubuntu-22.04’)</p></td>
-</tr>
-</tbody>
-</table>
-</section>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation/01_wsl_host.html">WSL2 &#64; host</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/01_wsl_host.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/01_wsl_host.html#maintenance-and-verification">Maintenance and Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/01_wsl_host.html#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation/02_wsl_guest.html">WSL2 &#64; guest</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/02_wsl_guest.html#post-installation-setup">Post-Installation Setup</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 
 
@@ -527,11 +470,11 @@ After setup, you may also need to <code class="docutils literal notranslate"><sp
       </div>
     </a>
     <a class="right-next"
-       href="../anaconda/index.html"
+       href="installation/01_wsl_host.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Anaconda</p>
+        <p class="prev-next-title">WSL2 &#64; host</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -542,23 +485,7 @@ After setup, you may also need to <code class="docutils literal notranslate"><sp
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-installation-setup">Post-Installation Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-and-verification">Maintenance and Verification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uninstallation">Uninstallation</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
