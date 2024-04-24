@@ -1,5 +1,17 @@
 # WSL2 @ guest
 
+````{sidebar} **Terminal @ guest** 
+```{code-block} shell
+<your command at Terminal>
+```
+````
+
+The following `commands` needs to be executetd in Terminal at `WSL2 guest`
+
+<br>
+
+---
+
 ## Post-Installation Setup
 
 :::{tip}

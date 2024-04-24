@@ -1,5 +1,17 @@
 # WSL2 @ host
 
+````{sidebar} **PowerShell @ host** 
+```{code-block} shell
+<your command at PowerShell>
+```
+````
+
+The following `commands` needs to be executetd in PowerShell at `WSL2 host`
+
+<br>
+
+---
+
 ## Installation
 | Command | Description |
 |---------|-------------|
